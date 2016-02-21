@@ -1,0 +1,4 @@
+---
+# Variables are applicable to all host groups
+repository: https://github.com/pietdaniel/piet.us.git
+html_dir: /usr/share/nginx/html/

@@ -1,0 +1,5 @@
+---
+
+- name: Copy piet.us from git repo
+  become: true
+  git: repo={{ repository }} dest=/var/www/html/

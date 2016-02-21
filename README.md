@@ -1,0 +1,11 @@
+### Getting there slowly
+
+Nginx role was hijacked from https://github.com/jdauphant/ansible-role-nginx
+
+static role just copies github/piet.us into /usr/share/nginx/html i think (maybe var www)
+
+need to set up chtr and notes
+ - clone repo
+ - create user
+ - consider setting up js correctly
+ - run script (supervisor?)

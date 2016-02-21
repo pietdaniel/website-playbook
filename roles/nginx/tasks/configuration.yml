@@ -1,0 +1,14 @@
+---
+- name: Copy the nginx configuration file
+  become: true
+  template: src=nginx.conf dest={{nginx_conf_dir}}/nginx.conf
+  notify:
+   - restart nginx
+  tags: [configuration,nginx]
+
+- name: Create the configurations for sites
+  become: true
+  template: src=piet-us dest={{nginx_conf_dir}}/sites-enabled/piet-us
+  notify:
+   - reload nginx
+  tags: [configuration,nginx]
