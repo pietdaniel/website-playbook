@@ -1,0 +1,1 @@
+- user: name={{ notes_user }} comment="{{ notes_service_name }} user" groups={{ notes_group }}

@@ -1,0 +1,5 @@
+---
+
+- name: Copy notes from git repo
+  become: true
+  git: repo="{{ repository }}/notes.git" dest="/home/{{ notes_user }}/"

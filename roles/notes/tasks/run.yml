@@ -1,0 +1,4 @@
+---
+- name: Run the notes service
+  notify:
+   - restart notes

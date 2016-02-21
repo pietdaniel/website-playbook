@@ -1,0 +1,4 @@
+---
+- name: Copy the init script
+  become: true
+  template: src=notes dest=/etc/init.d/notes

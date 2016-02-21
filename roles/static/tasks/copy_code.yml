@@ -2,4 +2,4 @@
 
 - name: Copy piet.us from git repo
   become: true
-  git: repo={{ repository }} dest=/var/www/html/
+  git: repo="{{ repository }}/piet-us.git" dest=/var/www/html/
