@@ -1,4 +1,4 @@
 ---
 # Variables are applicable to all host groups
-repository: https://github.com/pietdaniel/
+repository: https://github.com/pietdaniel
 html_dir: /usr/share/nginx/html/

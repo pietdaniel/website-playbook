@@ -1,5 +1,12 @@
 ---
+- name: Remove existing html folder
+  become: true
+  file: path=/var/www/html state=absent
+
+- name: Create html folder
+  become: true
+  file: path=/var/www/html state=directory owner=dan group=dan
 
 - name: Copy piet.us from git repo
   become: true
-  git: repo="{{ repository }}/piet-us.git" dest=/var/www/html/
+  git: repo={{ repository }}/piet-us.git dest=/var/www/html/
