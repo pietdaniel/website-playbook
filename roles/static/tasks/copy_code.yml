@@ -8,4 +8,4 @@
   file: path=/var/www/html state=directory owner=dan group=dan
 
 - name: Copy piet.us from git repo
-  git: repo={{ repository }}/piet.us.git dest=/var/www/html/ accept_hostkey=yes
+  git: repo={{ repository }}/piet.us.git dest=/var/www/html/ accept_hostkey=yes depth=1
