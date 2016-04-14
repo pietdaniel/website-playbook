@@ -1,5 +1,6 @@
 ---
-- include: user.yml
-- include: copy_code.yml
-- include: install.yml
-- include: configuration.yml
+#- include: user.yml
+# - include: copy_code.yml
+# - include: install.yml
+# - include: configuration.yml
+- include: run.yml

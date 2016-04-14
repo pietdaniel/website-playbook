@@ -4,5 +4,7 @@
   hosts: webservers
   remote_user: dan
   roles:
-    - nginx
-    - static
+    # - ansible-pip
+    # - nginx
+    # - static
+    - notes

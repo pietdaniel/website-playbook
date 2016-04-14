@@ -1,1 +1,3 @@
-- pip: name=flask
+- name: Install flask through pip
+  become: true
+  pip: name=flask

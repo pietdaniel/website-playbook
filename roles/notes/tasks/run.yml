@@ -1,4 +1,5 @@
 ---
-- name: Run the notes service
-  notify:
-   - restart notes
+
+- name: run the notes service
+  become: true
+  service: name=notes state=started

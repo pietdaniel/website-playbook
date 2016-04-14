@@ -1,4 +1,7 @@
 ---
+- name: start notes
+  service: name={{ notes_service_name }} state=started
+
 - name: restart notes
   changed_when: True
   service: name={{ notes_service_name }} state=restarted

@@ -1,3 +1,11 @@
+# Ansible Playbook for my website
+
+### How to Run
+
+
+#### Run entire playbook
+ansible-playbook -i hosts site.yml --ask-become-pass -vvvvv
+
 ### Getting there slowly
 
 Nginx role was hijacked from https://github.com/jdauphant/ansible-role-nginx
