@@ -1,0 +1,3 @@
+[submodule "roles/ansible-pip"]
+	path = roles/ansible-pip
+	url = https://github.com/bobbyrenwick/ansible-pip.git

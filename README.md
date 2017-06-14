@@ -18,16 +18,5 @@ need to set up chtr and notes
  - run script (supervisor?)
 
 ### Setting up new digital ocean
-
-- Spin up droplet
-- SSH as root
-- adduser
-- enable password auth
-- restart ssh
-- copy id
-- disable password auth
-- restart ssh
-
-- make remote_user site.yml remote user is setup correctly
-
+ - run pietdaniel/do-server-setup-playbook
 
