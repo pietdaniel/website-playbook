@@ -2,7 +2,6 @@
 
 ### How to Run
 
-
 #### Run entire playbook
 ansible-playbook -i hosts site.yml --ask-become-pass -vvvvv
 
@@ -17,3 +16,18 @@ need to set up chtr and notes
  - create user
  - consider setting up js correctly
  - run script (supervisor?)
+
+### Setting up new digital ocean
+
+- Spin up droplet
+- SSH as root
+- adduser
+- enable password auth
+- restart ssh
+- copy id
+- disable password auth
+- restart ssh
+
+- make remote_user site.yml remote user is setup correctly
+
+

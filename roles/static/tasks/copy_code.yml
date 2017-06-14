@@ -5,7 +5,7 @@
 
 - name: Create html folder
   become: true
-  file: path=/var/www/html state=directory owner=dan group=dan
+  file: path=/var/www/html state=directory owner=piet group=piet
 
 - name: Copy piet.us from git repo
   git: repo={{ repository }}/piet.us.git dest=/var/www/html/ accept_hostkey=yes depth=1

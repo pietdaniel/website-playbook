@@ -5,7 +5,7 @@
 
 - name: Create notes folder
   become: true
-  file: path=/home/notes/notes state=directory owner=dan group=dan
+  file: path=/home/notes/notes state=directory owner=piet group=piet
 
 - name: Copy notes from git repo
   git: repo="{{ repository }}/notes.git" dest="/home/{{ notes_user }}/notes" accept_hostkey=yes
