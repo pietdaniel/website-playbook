@@ -1,2 +1,2 @@
 ---
-- include: copy_code.yml
+- import_tasks: copy_code.yml
