@@ -12,3 +12,19 @@
   notify:
    - reload nginx
   tags: [configuration,nginx]
+
+- name: Generate dhparams
+  become: true
+  shell: openssl dhparam -out /etc/nginx/dhparams.pem 2048
+  args:
+    creates: /etc/nginx/dhparams.pem
+
+- name: Install nginx site for specified site
+  become: true
+  template:
+    src: templates/nginx-le.conf
+    dest: /etc/nginx/sites-enabled/le
+
+- name: Reload nginx to activate specified site
+  become: true
+  service: name=nginx state=restarted
