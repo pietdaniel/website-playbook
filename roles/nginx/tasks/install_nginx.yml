@@ -9,6 +9,18 @@
     pkg: nginx
     state: latest
 
+- name: NGINX | Installing NGINX
+  become: yes
+  apt:
+    pkg: nginx
+    state: latest
+
+- name: NGINX | Installing fcgiwrap
+  become: yes
+  apt:
+    pkg: fcgiwrap
+    state: latest
+
 - name: NGINX | Starting NGINX
   service:
     name: nginx

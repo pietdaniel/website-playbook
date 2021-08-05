@@ -9,3 +9,9 @@
 
 - name: Copy piet.us from git repo
   git: repo={{ repository }}/piet.us.git dest=/var/www/html/ accept_hostkey=yes depth=1
+
+- name: Installing jq
+  become: yes
+  apt:
+    pkg: jq
+    state: latest
