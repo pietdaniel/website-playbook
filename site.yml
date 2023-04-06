@@ -5,6 +5,6 @@
   remote_user: civil
   roles:
     - ansible-pip
-    - letsencrypt
     - nginx
     - static
+    - letsencrypt

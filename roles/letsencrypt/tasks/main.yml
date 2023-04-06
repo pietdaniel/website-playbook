@@ -1,2 +1,48 @@
 ---
-- import_tasks: setup.yml
+# Install Certbot and its dependencies
+- name: Install Certbot and dependencies
+  become: true
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - software-properties-common
+    - certbot
+    - python3-certbot-nginx
+
+# Obtain Let's Encrypt certificate using Certbot
+- name: Obtain Let's Encrypt certificate
+  become: true
+  shell: certbot --nginx -d piet.us --non-interactive --agree-tos --email admin@piet.us
+  ignore_errors: true
+
+- name: Validate nginx config
+  become: true
+  shell: nginx -t
+  register: command
+  ignore_errors: true
+
+# Reload NGINX if certificate obtained successfully
+- name: Reload NGINX if configuration is valid
+  become: true
+  systemd:
+    name: nginx
+    state: reloaded
+  when: "'nginx: configuration file /etc/nginx/nginx.conf test is successful' in command.stdout"
+
+# Notify if certificate could not be obtained
+- name: Notify if certificate could not be obtained
+  become: true
+  debug:
+    msg: "Could not obtain Let's Encrypt certificate. Please check the Certbot logs and NGINX configuration."
+  when: "'Congratulations!' not in command.stderr"
+
+# Set up automatic certificate renewal
+- name: Set up automatic certificate renewal
+  become: true
+  copy:
+    content: |
+      #!/bin/bash
+      certbot renew --quiet --non-interactive --post-hook "systemctl reload nginx"
+    dest: /etc/cron.daily/certbot-renew
+    mode: 0755
