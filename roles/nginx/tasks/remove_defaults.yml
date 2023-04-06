@@ -4,4 +4,4 @@
   become: yes
   notify:
   - reload nginx
-  tags: [configuration,nginx]
+  tags: [configuration, nginx]
