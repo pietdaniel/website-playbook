@@ -3,7 +3,18 @@
 ### How to Run
 
 #### Run entire playbook
+
+```bash
 ansible-playbook -i hosts site.yml --ask-become-pass -vvvvv
+```
+
+or:
+
+```bash
+./run.sh
+```
+
+The password in in the password manager.
 
 ### Getting there slowly
 
@@ -29,7 +40,6 @@ sudo openssl genrsa -out /etc/letsencrypt/keys/piet.us_new.key 2048
 
 this is bad, doing certbot
 
-
 ```
 sudo apt-get update
 sudo apt-get install certbot python3-certbot-nginx
@@ -40,5 +50,3 @@ sudo certbot --nginx -d piet.us
 sudo nginx -t
 sudo systemctl reload nginx
 ```
-
-
