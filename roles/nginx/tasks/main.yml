@@ -1,4 +1,4 @@
 ---
-- include: install_nginx.yml
-- include: remove_defaults.yml
-- include: configuration.yml
+- import_tasks: install_nginx.yml
+- import_tasks: remove_defaults.yml
+- import_tasks: configuration.yml
