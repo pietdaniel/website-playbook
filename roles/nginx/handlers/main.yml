@@ -1,26 +1,30 @@
 ---
 - name: restart nginx
+  become: True
   debug: msg="checking config first"
   changed_when: True
   notify:
-    # - check nginx configuration
+    - check nginx configuration
     - restart nginx - after config check
 
 - name: reload nginx
+  become: True
   debug: msg="checking config first"
   changed_when: True
   notify:
-    # - check nginx configuration
+    - check nginx configuration
     - reload nginx - after config check
 
-#- name: check nginx configuration
-  #shell: "{{ nginx_binary_name }} -t"
-  #register: result
-  #changed_when: "result.rc != 0"
-  #always_run: yes
+- name: check nginx configuration
+  become: True
+  shell: "{{ nginx_binary_name }} -t"
+  register: result
+  changed_when: "result.rc != 0"
 
 - name: restart nginx - after config check
+  become: True
   service: name={{ nginx_service_name }} state=restarted
 
 - name: reload nginx - after config check
+  become: True
   service: name={{ nginx_service_name }} state=reloaded
