@@ -1,5 +1,0 @@
----
-
-- name: run the notes service
-  become: true
-  service: name=notes state=started

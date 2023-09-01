@@ -1,9 +1,0 @@
----
-
-- name: Ensure pid directory exists
-  become: true
-  file: path={{ notes_pid_dir }} state=directory owner=notes group=notes
-
-- name: Copy the init script
-  become: true
-  template: src=notes dest=/etc/init.d/notes

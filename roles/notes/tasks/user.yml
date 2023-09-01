@@ -1,6 +1,0 @@
-- name: Add notes group
-  become: true
-  group: name={{ notes_group }} state=present
-- name: Add notes user
-  become: true
-  user: name={{ notes_user }} comment="{{ notes_service_name }} user" groups={{ notes_group }}

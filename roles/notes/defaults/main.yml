@@ -1,9 +1,0 @@
----
-notes_user: "notes"
-notes_group: "{{notes_user}}"
-notes_service_name: "notes"
-notes_log_dir: "/var/log/notes"
-notes_pid_dir: "/var/run/piet-us-{{notes_service_name}}"
-notes_pid_file: "{{ notes_pid_dir }}/agent.pid"
-notes_install_dir: "/home/{{ notes_user }}/notes"
-notes_run_script: "{{ notes_install_dir }}/run.sh"
