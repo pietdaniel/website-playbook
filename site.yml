@@ -1,10 +1,8 @@
 ---
-
 - name: configure and deploy the webservers and app code
   hosts: webservers
   remote_user: civil
   roles:
-    - ansible-pip
     - nginx
     - static
     - letsencrypt
